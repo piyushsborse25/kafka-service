@@ -1,0 +1,30 @@
+# Java
+*.class
+*.jar
+*.war
+*.log
+*.iml
+
+# Maven
+target/
+!src/main/resources/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Kafka/Temp
+kafka-logs/
+zookeeper-logs/
+
+# Application secrets
+src/main/resources/*.secret.*
+notification-service/src/main/resources/application.properties
+.env
+
+# Email credentials backup
+credentials.json
