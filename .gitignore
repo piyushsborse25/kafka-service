@@ -24,6 +24,7 @@ zookeeper-logs/
 # Application secrets
 src/main/resources/*.secret.*
 notification-service/src/main/resources/application.properties
+orde-service/src/main/resources/application.properties
 .env
 
 # Email credentials backup

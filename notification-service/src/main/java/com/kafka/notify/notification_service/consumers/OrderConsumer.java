@@ -22,10 +22,10 @@ public class OrderConsumer {
 			orderObject = new OrderedJSONObject(order);
 			emailService.sendEmailHTML(orderObject.getString("customerEmail"),
 					OrderEmailUtils.buildOrderEmailHtml(orderObject));
+			System.out.println("Order Processed with ID: " + orderObject.getString("orderId"));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		System.out.println(orderObject);
 	}
 
 }

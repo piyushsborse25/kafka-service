@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kafka.notify.order_service.entities.Order;
 import com.kafka.notify.order_service.producers.OrderProducer;
+import com.kafka.notify.order_service.utils.OrderUtil;
 
 @RestController
 @RequestMapping(path = "/v1")
@@ -20,7 +21,8 @@ public class OrderController {
 
 	@PostMapping(path = "/placeOrder")
 	public ResponseEntity<String> placeOrder(@RequestBody Order order) {
-		System.out.println(order);
+		OrderUtil.enrich(order);
+		System.out.println("Order Placed with ID: " + order.getOrderId());
 		boolean success = orderProducer.sendOrder("orders", order);
 
 		if (success) {

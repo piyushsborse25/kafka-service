@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import jakarta.mail.MessagingException;
@@ -29,6 +30,7 @@ public class EmailService {
 		System.out.println("Mail Sent Successfully");
 	}
 
+	@Async(value = "emailThreadPool")
 	public void sendEmailHTML(String to, String content) {
 		try {
 			MimeMessage mimeMessage = mailSender.createMimeMessage();
