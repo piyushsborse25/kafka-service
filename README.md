@@ -36,27 +36,6 @@ This project demonstrates a **Kafka-based microservices architecture** using Spr
 ```
 orders
 ```
-
----
-
-## 🧪 Sample Order Payload (POST /api/order)
-
-```json
-{
-  "orderId": "ORD123458",
-  "customerEmail": "arihripiyu@gmail.com",
-  "orderDate": "2025-07-20 18:45:00",
-  "items": [
-    "Laptop",
-    "Wireless Mouse",
-    "USB-C Hub"
-  ],
-  "totalAmount": 75890.75,
-  "shippingAddress": "London",
-  "paymentStatus": "PAID"
-}
-```
-
 ---
 
 ## 🚀 How to Run
@@ -100,13 +79,13 @@ orders
     curl -X POST http://localhost:8081/api/order \
     -H "Content-Type: application/json" \
     -d '{
-      "orderId": "ORD123458",
       "customerEmail": "arihripiyu@gmail.com",
-      "orderDate": "2025-07-20 18:45:00",
-      "items": ["Laptop", "Wireless Mouse", "USB-C Hub"],
-      "totalAmount": 75890.75,
-      "shippingAddress": "London",
-      "paymentStatus": "PAID"
+      "items": [
+        "Laptop",
+        "Wireless Mouse",
+        "Artic Fox Bag"
+      ],
+      "shippingAddress": "Pune"
     }'
     ```
 
